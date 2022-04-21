@@ -1,0 +1,152 @@
+syntax on
+
+set relativenumber
+set number
+set visualbell
+set surround
+set highlightedyank
+set ideamarks
+set ideajoin
+set commentary
+set argtextobj
+set textobj-entire
+set NERDTree
+set vim-paragraph-motion
+set textobj-indent
+set exchange
+
+set mouse=a
+set easymotion
+set expandtab
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set numberwidth=1
+set nowrap
+set noswapfile
+set nobackup
+set incsearch
+set ignorecase
+set clipboard=unnamedplus
+set encoding=utf-8
+set showmatch
+set cursorline
+set termguicolors
+set colorcolumn=120
+set linespace=3
+set nocompatible
+highlight Column ctermbg=0 guibg=lightgrey
+set undolevels=10000
+
+
+
+let mapleader = ","
+
+
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visual Mode
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap <A-k>  :action MoveLineUp<CR>
+vnoremap <A-j>  :action MoveLineDown<CR>
+vmap ii <Esc>
+vmap II <Esc>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Insert mode
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <A-j> :action MoveLineDown<CR>
+inoremap <A-k> :action MoveLineUp<CR>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>_
+inoremap <C-w> <C-o>w
+inoremap <C-b> <C-o>b
+inoremap <C-x> <C-o>x
+" inoremap <C-u> <C-o>u
+imap jj <Esc>
+imap jk  <Esc>
+
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Normal mode 
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>w :w<CR>
+nnoremap <leader>W :w!<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>a ggVG
+nnoremap <A-j> :action MoveLineDown<CR>
+nnoremap <A-k> :action MoveLineUp<CR>
+nnoremap <leader>f :NERDTreeFocus<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeFind<CR>
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR> " center scrolling
+nnoremap <leader>zx :let &scrolloff=0<CR> " reset scrolling
+nnoremap <C-[>  15<C-e>  " faster scrolling
+nnoremap <C-]>  15<C-y>  " faster scrolling
+nnoremap <C-J> <C-W><C-J> " Use ctrl-[hjkl] to select the active split!
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nmap <S-Tab> :tabprevious<cr>
+nmap <Tab> :tabnext<cr>
+
+nmap <silent> <right> :vertical resize +5<CR>
+nmap <silent> <left> :vertical resize -5<CR>
+nmap <silent> <up> :resize  -5<CR>
+nmap <silent> <down> :resize +5<CR>
+nmap <leader>v :vsp<CR>
+nmap <leader>b :sp<CR>
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sethandler IDEAVim
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+sethandler <C-C> a:vim
+sethandler <C-I> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easymotion
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<ll>f{char}  <Plug>(easymotion-f)
+<ll>F{char}  <Plug>(easymotion-F)
+<ll>t{char}  <Plug>(easymotion-t)
+<ll>T{char}  <Plug>(easymotion-T)
+
+<ll>w        <Plug>(easymotion-w) 
+<ll>W        <Plug>(easymotion-W) 
+<ll>b        <Plug>(easymotion-b) 
+<ll>B        <Plug>(easymotion-B) 
+<ll>e        <Plug>(easymotion-e) 
+<ll>E        <Plug>(easymotion-E) 
+<ll>ge       <Plug>(easymotion-ge) 
+<ll>gE       <Plug>(easymotion-gE)
+<ll>j        <Plug>(easymotion-j) 
+<ll>k        <Plug>(easymotion-k) 
+<ll>s        <Plug>(easymotion-s)
+" <ll>s2      <Plug>(easymotion-s2)
+" <ll>N        <Plug>(easymotion-N)
+" <ll>n        <Plug>(easymotion-n)
+
+" """""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+" """""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeMapOpenInTab='\t'
+

@@ -1,0 +1,429 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.5,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontFamily": "'Cascadia Code PL'",
+  "editor.fontLigatures": "true",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.fontSize": 17,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
+  "explorer.confirmDelete": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveshare.presence": true,
+  "redhat.telemetry.enabled": true,
+  "notebook.lineNumbers": "on",
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "git.confirmSync": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.startupEditor": "none",
+  "editor.guides.bracketPairs": true,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    }
+  ],
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+  "gitProjectManager.baseProjectsFolders": [
+    "/home/phreakphreak/Dev",
+    "/home/phreakphreak/Github",
+    "/home/phreakphreak/Repos"
+  ],
+
+  // Languages
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua",
+    "editor.formatOnSave": true
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[shellscript]": {
+    "files.eol": "\n",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.hover.above": false,
+
+  "vim.leader": ",",
+  "vim.sneak": false,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.smartcase": true,
+  "vim.autoindent": true,
+  "vim.ignorecase": true,
+  "vim.smartRelativeLine": true,
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.highlightedyank.color": "rgb(141, 122, 242, 0.7)",
+  "vim.highlightedyank.duration": 250,
+  "vim.highlightedyank.enable": true,
+  "vim.whichwrap": "<,>",
+  "vim.handleKeys": {
+    "<C-a>": true,
+    "<C-f>": false,
+    "<C-s>": false
+    // "<C-d>": false
+    // "<C-c>": false,
+    // "<C-x>": false,
+    // "<C-v>": false,
+    // "<C-z>": false,
+    // "<C-y>": false
+  },
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"],
+      "silent": true
+    },
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<Left>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<Right>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<Down>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<Up>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-e>"],
+      "after": ["<C-o>", "$"],
+      "silent": true
+    },
+    {
+      "before": ["<C-a>"],
+      "after": ["<C-o>", "_"],
+      "silent": true
+    },
+    {
+      "before": ["<C-w>"],
+      "after": ["<C-o>", "w"],
+      "silent": true
+    }
+  ],
+
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["i", "i"],
+      "after": ["<Esc>"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "c", "c"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.commentLine",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": [">"],
+      "after": [">", "g", "v"],
+      "silent": true
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"],
+      "silent": true
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "e"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.view.explorer",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<tab>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.nextEditorInGroup",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<S-tab>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.previousEditorInGroup",
+          "args": []
+        }
+      ],
+      "silent": true
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "w"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.toggleTerminal",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "q"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<Left>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.decreaseViewWidth",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<Right>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.increaseViewWidth",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<Down>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.decreaseViewHeight",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<Up>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.increaseViewHeight",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "c", "c"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.commentLine",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["s", "s"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorRight",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["s", "v"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorDown",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<C-[>"],
+      "after": ["<C-e>"],
+      "silent": true
+    },
+    {
+      "before": ["<C-]>"],
+      "after": ["<C-y>"],
+      "silent": true
+    },
+    // {
+    //   "before": [":"],
+    //   "after": [],
+    //   "commands": [
+    //     {
+    //       "command": "workbench.action.showCommands",
+    //       "args": []
+    //     }
+    //   ],
+    //   "silent": true
+    // },
+    {
+      "before": ["g", "d"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.revealDefinition",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"],
+      "silent": true
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"],
+      "silent": true
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"],
+      "silent": true
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"],
+      "silent": true
+    }
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "git.autofetch": true,
+  "Lua.telemetry.enable": false,
+  "editor.cursorSurroundingLines": 0,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "rpc.detailsEditing": "In {workspace}"
+}
+// test 2
