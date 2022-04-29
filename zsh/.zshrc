@@ -14,12 +14,28 @@ fi
 # eval "$(pyenv init --path)"
 # eval "$(pyenv virtualenv-init -)"
 
+# Node Version Manager
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 # Go Path
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 
 export GOPATH=/home/phreakphreak/go
 export PATH=$PATH:$GOPATH/bin
+
+# Dotnet
+# export DOTNET_ROOT=$(pwd)/.dotnet
+# export PATH=$PATH:$DOTNET_ROOT
+export PATH=$PATH:/usr/share/dotnet
+
+# mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
+
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -148,6 +164,7 @@ source $ZSH/oh-my-zsh.sh
 # Custom Alias
 alias cat="/usr/bin/bat -P"
 alias catn="/usr/bin/cat"
+alias catp="cat --plain"
 alias vim="/usr/bin/nvim"
 alias vi="/usr/bin/nvim"
 alias viv="/usr/bin/nvim -m"
@@ -160,15 +177,10 @@ alias pcfg="vim ~/.p10k.zsh"
 alias kcfg="vim ~/.config/kitty/kitty.conf"
 alias ip='ip --color=auto'
 alias kicat="kitty +kitten icat"
-alias reupkon="sudo pkcon refresh && sudo pkcon update -y"
+alias xclp="xclip -sel clip"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 
 
@@ -235,16 +247,24 @@ ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 # Extract nmap information
 
 function extractPorts() {
-    ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-    ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-    echo -e "\n[*] Extracting information...\n" >extractPorts.tmp
-    echo -e "\t[*] IP Address: $ip_address" >>extractPorts.tmp
-    echo -e "\t[*] Open ports: $ports\n" >>extractPorts.tmp
-    echo $ports | tr -d '\n' | xclip -sel clip
-    echo -e "[*] Ports copied to clipboard\n" >>extractPorts.tmp
-    cat extractPorts.tmp
-    rm extractPorts.tmp
+ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+echo -e "\n[*] Extracting information...\n" >extractPorts.tmp
+echo -e "\t[*] IP Address: $ip_address" >>extractPorts.tmp
+echo -e "\t[*] Open ports: $ports\n" >>extractPorts.tmp
+echo $ports | tr -d '\n' | xclip -sel clip
+echo -e "[*] Ports copied to clipboard\n" >>extractPorts.tmp
+cat extractPorts.tmp
+rm extractPorts.tmp
 
 }
 
 
+
+
+# eval
+# TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
+#
+function webBasicStructure(){
+touch {index.html,styles.css,main.js}
+}

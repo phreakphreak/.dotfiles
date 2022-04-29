@@ -1,5 +1,10 @@
 
 local M = {
+  rainbow = {
+    enable = true,
+    extendend = true,
+    max_file_lines = nil,
+  },
         ensure_installed = {
           "html",
           "css",

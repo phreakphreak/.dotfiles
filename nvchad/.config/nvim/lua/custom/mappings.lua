@@ -21,8 +21,8 @@ local mappings = {
   {"n","<down>",":resize +5<CR>"},
   {"n","<leader>zz",":let &scrolloff=999-&scrolloff<CR>"},
   {"n","<leader>zx",":let &scrolloff=0<CR>"},
-  {"n","<C-[>","15<C-e>"},
-  {"n","<C-]>","15<C-y>"},
+  {"n","<C-[>","10<C-e>"},
+  {"n","<C-]>","10<C-y>"},
 }
 
 

@@ -1,6 +1,13 @@
-! special
+! Xft
 Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
 
+! special
 *.foreground:   #d9d7d6
 *.background:   #061115
 *.cursorColor:  #d9d7d6

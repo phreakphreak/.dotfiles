@@ -1,4 +1,3 @@
-
 local M = {}
 
 local options = require("custom.options")
@@ -6,7 +5,7 @@ local user_plugins = require("custom.plugins")
 
 
 
-M.options =  options
+M.options = options
 
 M.mappings = {
   plugins = {
@@ -18,8 +17,8 @@ M.mappings = {
 
 
 M.ui = {
-   theme = "onedark",
-   transparency = 0.9
+  theme = "tokyonight",
+  transparency = 0.9
 }
 
 
