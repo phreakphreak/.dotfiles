@@ -5,6 +5,7 @@ return {
   { 'editorconfig/editorconfig-vim' },
   { 'junegunn/fzf' },
   { 'williamboman/nvim-lsp-installer' },
+  { "DougBeney/pickachu" },
   {
     "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
