@@ -8,6 +8,7 @@ local mappings = {
   {"i","<A-j>","<Esc>:m .+1<CR>==gi"},
   {"i","<A-k>","<Esc>:m .-2<CR>==gi"},
 
+  {"n", "<leader>cc", ":Telescope <CR>"},
   {"n", "<leader>q", ":q<CR>"},
   {"n", "<leader>Q", ":q!<CR>"},
   {"n", "<leader>a", "gg_<S-v>G"},

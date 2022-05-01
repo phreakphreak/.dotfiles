@@ -1,4 +1,4 @@
--- custom.configs.lspconfig file 
+-- custom.configs.lspconfig file
 
 local M = {}
 
@@ -8,7 +8,7 @@ M.setup_lsp = function(attach, capabilities)
    lsp_installer.settings {
       ui = {
          icons = {
-            server_installed = "﫟" ,
+            server_installed = "﫟",
             server_pending = "",
             server_uninstalled = "✗",
          },
