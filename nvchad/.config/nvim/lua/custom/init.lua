@@ -1,6 +1,6 @@
 local map = require("core.utils").map
 
-local data = require "custom.mappings"
+local data = require("custom.mappings")
 
 vim.g.mapleader = ","
 vim.o.list = true
@@ -31,20 +31,16 @@ vim.o.wrap = false
 vim.o.undofile = true
 vim.o.splitbelow = true
 vim.o.splitright = true
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.listchars:append "eol:↴"
 
-vim.cmd "highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine"
-vim.cmd "highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine"
-vim.cmd "highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine"
-vim.cmd "highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine"
-vim.cmd "highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine"
-vim.cmd "highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine"
--- vim.o.undodir = ConfigPath .. "/.undodir"
-vim.cmd "highlight ColoColumn ctermbg=0 guibg=lightgrey"
+vim.cmd("highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine")
+vim.cmd("highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine")
+
+vim.cmd("highlight ColoColumn ctermbg=0 guibg=lightgrey")
 
 for i = 1, #data do
-   map(data[i][1], data[i][2], data[i][3])
+	map(data[i][1], data[i][2], data[i][3])
 end
-
--- require("my autocmds file") or just declare them here
