@@ -5,19 +5,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export VISUAL=nvim;
+export EDITOR=nvim;
+export SUDO_PROMPT="passwd: "
 # Starship zsh
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Pyenv and virtualenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init --path)"
+#eval "$(pyenv virtualenv-init -)"
 
 # Node Version Manager
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -37,7 +39,11 @@ export PATH=$PATH:/usr/share/dotnet
 
 # mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
+# JAVA
+export JAVA_HOME="/usr/lib/jvm/default"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -111,30 +117,31 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # History configurations
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=20000
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
 
 # Plugins
 plugins=(
-git
-zsh-autosuggestions
-zsh-syntax-highlighting
-nvm
-pyenv
-copyfile
-copypath
-dirhistory
-history
-copybuffer
-web-search
-jsontools
-sudo
-colored-man-pages
-docker
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  nvm
+  pyenv
+  copyfile
+  copypath
+  dirhistory
+  history
+  copybuffer
+  web-search
+  jsontools
+  sudo
+  colored-man-pages
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -180,6 +187,7 @@ alias kcfg="vim ~/.config/kitty/kitty.conf"
 alias ip='ip --color=auto'
 alias kicat="kitty +kitten icat"
 alias xclp="xclip -sel clip"
+alias todo="todo.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -261,12 +269,7 @@ rm extractPorts.tmp
 
 }
 
-
-
-
 # eval
 # TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 #
-function webBasicStructure(){
-touch {index.html,styles.css,main.js}
-}
+
