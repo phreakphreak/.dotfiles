@@ -5,10 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export VISUAL=nvim;
-export EDITOR=nvim;
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+export VISUAL=nvim
+export EDITOR=nvim
 export SUDO_PROMPT="passwd: "
-# Starship zsh
+
 # eval "$(starship init zsh)"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,6 +22,19 @@ export SUDO_PROMPT="passwd: "
 #export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init --path)"
 #eval "$(pyenv virtualenv-init -)"
+
+
+# bun completions
+[ -s "/home/phreakphreak/.bun/_bun" ] && source "/home/phreakphreak/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/phreakphreak/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fnm
+export PATH=/home/phreakphreak/.fnm:$PATH
+eval "`fnm env`"
+eval "$(fnm env --use-on-cd)"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
@@ -39,6 +56,7 @@ export PATH=$PATH:/usr/share/dotnet
 
 # mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 
+# Deno
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
@@ -52,7 +70,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="spaceship" 
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -188,11 +207,11 @@ alias ip='ip --color=auto'
 alias kicat="kitty +kitten icat"
 alias xclp="xclip -sel clip"
 alias todo="todo.sh"
+alias neofetch='neofetch --ascii_distro arch'
+alias clram='sync; echo 3 > /proc/sys/vm/drop_caches'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -208,9 +227,6 @@ zle -N zle-keymap-select
 zle-line-init() { zle-keymap-select 'beam'}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=none
@@ -267,6 +283,14 @@ echo -e "[*] Ports copied to clipboard\n" >>extractPorts.tmp
 cat extractPorts.tmp
 rm extractPorts.tmp
 
+}
+
+function springMVC(){
+  mkdir {controllers,services,models,repositories}
+}
+
+function reactDir(){
+  mkdir {components,hooks}
 }
 
 # eval
