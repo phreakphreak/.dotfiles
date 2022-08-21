@@ -61,7 +61,7 @@ export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # JAVA
-export JAVA_HOME="/usr/lib/jvm/default"
+export JAVA_HOME="/usr/lib/jvm/default-java"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -182,12 +182,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-
 
 # Custom Alias
 alias cat="/usr/bin/bat -P"
@@ -198,6 +192,7 @@ alias vi="/usr/bin/nvim"
 alias viv="/usr/bin/nvim -m"
 alias ls="lsd"
 alias zcfg="vim ~/.zshrc"
+alias zprt="cat ~/.zshrc"
 alias zsrc="exec zsh"
 alias acfg="vim ~/.config/alacritty/alacritty.yml"
 alias tcfg="vim ~/.tmux.conf.local"
@@ -207,8 +202,55 @@ alias ip='ip --color=auto'
 alias kicat="kitty +kitten icat"
 alias xclp="xclip -sel clip"
 alias todo="todo.sh"
-alias neofetch='neofetch --ascii_distro arch'
-alias clram='sync; echo 3 > /proc/sys/vm/drop_caches'
+alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
+alias portlists="sudo lsof -i -P -n | grep LISTEN"
+
+
+# ----------------------
+# Git Aliases
+# ----------------------
+alias ga='git add'
+alias gaa='git add .'
+alias gaaa='git add --all'
+alias gau='git add --update'
+alias gb='git branch'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gckt="git checkout"
+alias gcm='git commit --message'
+alias gcf='git commit --fixup'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcom='git checkout master'
+alias gcos='git checkout staging'
+alias gcod='git checkout develop'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+
+alias grlc="git reset --soft HEAD~1"
+alias ghrc="gh repo clone"
+# ----------------------
+# Git Functions
+# ----------------------
+# Git log find by commit message
+function glf() { git log --all --grep="$1"; }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -296,4 +338,9 @@ function reactDir(){
 # eval
 # TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 #
+
+
+# fnm
+export PATH=/home/phreakphreak/.fnm:$PATH
+eval "`fnm env`"
 
