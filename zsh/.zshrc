@@ -335,6 +335,10 @@ function reactDir(){
   mkdir {components,hooks}
 }
 
+function homeUtilsDir(){
+  mkdir {Github,Dev,Repos,Workspaces}
+}
+
 # eval
 # TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 #
