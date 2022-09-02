@@ -1,0 +1,82 @@
+{
+  
+  "vim.leader": " ",
+  "vim.surround": true,
+  "vim.sneak": false,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.smartcase": true,
+  "vim.autoindent": true,
+  "vim.ignorecase": true,
+  "vim.smartRelativeLine": true,
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.searchHighlightTextColor": "#ff0000",
+  "vim.highlightedyank.color": "rgb(141, 122, 242, 0.7)",
+  "vim.highlightedyank.duration": 250,
+  "vim.highlightedyank.enable": true,
+  "vim.whichwrap": "<,>",
+  "vim.handleKeys": {
+    "<C-s>": false,
+    "<C-w>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-a>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<tab>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.nextEditorInGroup",
+          "args": []
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<S-tab>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.previousEditorInGroup",
+          "args": []
+        }
+      ],
+      "silent": true
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-l>"],
+      "commands": [":nohl"],
+      "silent": true
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+}

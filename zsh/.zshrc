@@ -50,8 +50,8 @@ export GOPATH=/home/phreakphreak/go
 export PATH=$PATH:$GOPATH/bin
 
 # Dotnet
-# export DOTNET_ROOT=$(pwd)/.dotnet
-# export PATH=$PATH:$DOTNET_ROOT
+export DOTNET_ROOT=$(pwd)/.dotnet
+export PATH=$PATH:$DOTNET_ROOT
 export PATH=$PATH:/usr/share/dotnet
 
 # mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
@@ -204,6 +204,7 @@ alias xclp="xclip -sel clip"
 alias todo="todo.sh"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
+alias pkc="sudo pkcon refresh && sudo pkcon update -y"
 
 
 # ----------------------
@@ -325,18 +326,6 @@ echo -e "[*] Ports copied to clipboard\n" >>extractPorts.tmp
 cat extractPorts.tmp
 rm extractPorts.tmp
 
-}
-
-function springMVC(){
-  mkdir {controllers,services,models,repositories}
-}
-
-function reactDir(){
-  mkdir {components,hooks}
-}
-
-function homeUtilsDir(){
-  mkdir {Github,Dev,Repos,Workspaces}
 }
 
 # eval
