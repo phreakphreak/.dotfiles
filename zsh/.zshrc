@@ -45,7 +45,6 @@ export NVM_DIR="$HOME/.nvm"
 # Go Path
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
-
 export GOPATH=/home/phreakphreak/go
 export PATH=$PATH:$GOPATH/bin
 
@@ -315,25 +314,7 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
 ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 # Extract nmap information
 
-function extractPorts() {
-ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-echo -e "\n[*] Extracting information...\n" >extractPorts.tmp
-echo -e "\t[*] IP Address: $ip_address" >>extractPorts.tmp
-echo -e "\t[*] Open ports: $ports\n" >>extractPorts.tmp
-echo $ports | tr -d '\n' | xclip -sel clip
-echo -e "[*] Ports copied to clipboard\n" >>extractPorts.tmp
-cat extractPorts.tmp
-rm extractPorts.tmp
-
-}
-
 # eval
 # TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 #
-
-
-# fnm
-export PATH=/home/phreakphreak/.fnm:$PATH
-eval "`fnm env`"
 
