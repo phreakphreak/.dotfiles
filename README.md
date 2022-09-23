@@ -26,3 +26,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 - Dank Mono
 - MonoLisa
+- Cascadia Code
+- Fira Code
+- JetBrains Mono
+- Hack Nerd Font
+
