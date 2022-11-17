@@ -59,7 +59,7 @@ export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # JAVA
-export JAVA_HOME="/usr/lib/jvm/default-java"
+# export JAVA_HOME="/usr/lib/jvm/default-java"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -177,6 +177,7 @@ alias vim="/usr/bin/nvim"
 alias vi="/usr/bin/nvim"
 alias viv="/usr/bin/nvim -m"
 alias ls="lsd"
+alias ncfg="cd ~/.config/nvim/lua/custom && nvim"
 alias zcfg="vim ~/.zshrc"
 alias zprt="cat ~/.zshrc"
 alias zsrc="exec zsh"
@@ -191,8 +192,14 @@ alias todo="todo.sh"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
 alias pkc="sudo pkcon refresh && sudo pkcon update -y"
+alias pls="apt list --upgradable"
 
+# Dev Snippets
+alias dev="npm run dev"
+alias test="npm test"
+alias devnet="dotnet watch run"
 
+#
 # ----------------------
 # Git Aliases
 # ----------------------
