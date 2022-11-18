@@ -31,11 +31,12 @@ export BUN_INSTALL="/home/phreakphreak/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # fnm
-export PATH=/home/phreakphreak/.fnm:$PATH
+export PATH="/home/phreakphreak/.local/share/fnm:$PATH"
 eval "`fnm env`"
 eval "$(fnm env --use-on-cd)"
 
-# Node Version Manager
+
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -311,4 +312,7 @@ ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 # eval
 # TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
 #
+
+# END FILE 
+
 
