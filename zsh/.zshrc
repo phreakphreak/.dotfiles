@@ -17,20 +17,21 @@ export SUDO_PROMPT="passwd: "
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Pyenv and virtualenv
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init --path)"
-#eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
 
-# bun completions
-[ -s "/home/phreakphreak/.bun/_bun" ] && source "/home/phreakphreak/.bun/_bun"
 
 # Bun
 export BUN_INSTALL="/home/phreakphreak/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# fnm
+# Bun completions
+[ -s "/home/phreakphreak/.bun/_bun" ] && source "/home/phreakphreak/.bun/_bun"
+
+# fnm 
 export PATH="/home/phreakphreak/.local/share/fnm:$PATH"
 eval "`fnm env`"
 eval "$(fnm env --use-on-cd)"
@@ -38,8 +39,8 @@ eval "$(fnm env --use-on-cd)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 
 # Go Path
@@ -53,7 +54,6 @@ export DOTNET_ROOT=$(pwd)/.dotnet
 export PATH=$PATH:$DOTNET_ROOT
 export PATH=$PATH:/usr/share/dotnet
 
-# mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 
 # Deno
 export DENO_INSTALL="$HOME/.deno"
@@ -62,15 +62,15 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # JAVA
 # export JAVA_HOME="/usr/lib/jvm/default-java"
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="spaceship" 
 
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
@@ -124,11 +124,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=20000
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-setopt share_history          # share command history data
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt share_history
 
 # Plugins
 plugins=(
@@ -171,6 +171,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Custom Alias
+alias authaws="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 711128949512.dkr.ecr.us-east-1.amazonaws.com"
 alias cat="/usr/bin/bat -P"
 alias catn="/usr/bin/cat"
 alias catp="cat --plain"
@@ -189,18 +190,24 @@ alias kcfg="vim ~/.config/kitty/kitty.conf"
 alias ip='ip --color=auto'
 alias kicat="kitty +kitten icat"
 alias xclp="xclip -sel clip"
-alias todo="todo.sh"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
 alias pkc="sudo pkcon refresh && sudo pkcon update -y"
 alias pls="apt list --upgradable"
 
+alias tree1="tree -L 1"
+alias tree2="tree -L 2"
+alias tree3="tree -L 3"
+
+alias postmankey="echo \"PMAK-638ff9c8507aff44a0e44d78-3b4264c978cdb7c210ee38225bb32dd328\""
+
+
 # Dev Snippets
 alias dev="npm run dev"
 alias test="npm test"
-alias devnet="dotnet watch run"
+alias lint="npm run lint"
+alias lintfix="npm run lint:fix"
 
-#
 # ----------------------
 # Git Aliases
 # ----------------------
@@ -208,22 +215,24 @@ alias ga='git add'
 alias gaa='git add .'
 alias gaaa='git add --all'
 alias gau='git add --update'
+
 alias gb='git branch'
 alias gbd='git branch --delete '
+
 alias gc='git commit'
-alias gckt="git checkout"
 alias gcm='git commit --message'
 alias gcf='git commit --fixup'
+
 alias gco='git checkout'
 alias gcob='git checkout -b'
-alias gcom='git checkout master'
-alias gcos='git checkout staging'
-alias gcod='git checkout develop'
+
 alias gd='git diff'
 alias gda='git diff HEAD'
+
 alias gi='git init'
 alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+
 alias gm='git merge --no-ff'
 alias gma='git merge --abort'
 alias gmc='git merge --continue'
@@ -250,7 +259,7 @@ function glf() { git log --all --grep="$1"; }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Change cursor shape for different vi modes.
+# # Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
 echo -ne '\e[1 q'
@@ -261,9 +270,8 @@ fi
 zle -N zle-keymap-select
 
 # Start with beam shape cursor on zsh startup and after every command.
-zle-line-init() { zle-keymap-select 'beam'}
+zle-line-init() { zle-keymap-select 'block'}
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[default]=none
@@ -307,12 +315,6 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
 ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
 ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
-# Extract nmap information
-
-# eval
-# TWILIO_AC_ZSH_SETUP_PATH=/home/phreakphreak/.twilio-cli/autocomplete/zsh_setup && test -f $TWILIO_AC_ZSH_SETUP_PATH && source $TWILIO_AC_ZSH_SETUP_PATH; # twilio autocomplete setup
-#
 
 # END FILE 
-
 
