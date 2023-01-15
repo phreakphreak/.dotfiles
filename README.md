@@ -31,5 +31,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ### Fonts
 
+```
+  cd ~/.dotfiles/fonts 
+  sudo cp CascadiaCode/*.ttf /usr/share/fonts
+  sudo cp FiraCode/*.ttf /usr/share/fonts
+  sudo cp JetBrainsMono/*.ttf /usr/share/fonts
+  sudo cp VictorMono/*.ttf /usr/share/fonts
+  sudo cp DankMono/*.ttf /usr/share/fonts
+  sudo cp HackNerdFont/*.ttf /usr/share/fonts
+  sudo cp MonoLisa/*.ttf /usr/share/fonts
+  fc-cache -v
+```
 - Dank Mono
 - MonoLisa
