@@ -17,10 +17,10 @@ export SUDO_PROMPT="passwd: "
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Pyenv and virtualenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 
@@ -32,9 +32,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/home/phreakphreak/.bun/_bun" ] && source "/home/phreakphreak/.bun/_bun"
 
 # fnm 
-export PATH="/home/phreakphreak/.local/share/fnm:$PATH"
-eval "`fnm env`"
-eval "$(fnm env --use-on-cd)"
+# export PATH="/home/phreakphreak/.local/share/fnm:$PATH"
+# eval "`fnm env`"
+# eval "$(fnm env --use-on-cd)"
 
 
 # nvm
