@@ -42,5 +42,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
   sudo cp MonoLisa/*.ttf /usr/share/fonts
   fc-cache -v
 ```
-- Dank Mono
-- MonoLisa
+
+### Keychain issues Arch 
+```
+https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
+```
