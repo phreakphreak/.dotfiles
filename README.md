@@ -94,6 +94,24 @@ sudo apt-get update && sudo apt-get install spotify-client
 ```
 
 
+## Rust
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+## Python Manager Version
+```
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+```
+
+```sh
+curl https://pyenv.run | bash
+```
+
+
 ### Keychain issues Arch 
 ```
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
