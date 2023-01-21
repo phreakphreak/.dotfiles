@@ -121,3 +121,12 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 https://code.visualstudio.com/docs/editor/settings-sync#_troubleshooting-keychain-issues
 ```
+
+
+## AWS CLI
+
+```sh
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
