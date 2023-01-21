@@ -83,6 +83,16 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
   sudo cp MonoLisa/*.ttf /usr/share/fonts
   fc-cache -v
 ```
+## Spotify
+```sh
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+```
+
+```sh
+sudo apt-get update && sudo apt-get install spotify-client
+```
+
 
 ### Keychain issues Arch 
 ```
