@@ -111,6 +111,11 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 curl https://pyenv.run | bash
 ```
 
+## NvChad
+
+```sh
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```
 
 ### Keychain issues Arch 
 ```
