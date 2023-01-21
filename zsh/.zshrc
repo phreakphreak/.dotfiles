@@ -172,6 +172,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Alias
 alias authaws="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 711128949512.dkr.ecr.us-east-1.amazonaws.com"
+
+alias tag-enviospet="docker tag enviospet/enviospet-frontend:latest 711128949512.dkr.ecr.us-east-1.amazonaws.com/enviospet/enviospet-frontend:"
+alias push-enviospet="docker push 711128949512.dkr.ecr.us-east-1.amazonaws.com/enviospet/enviospet-frontend:"
+
 alias cat="/usr/bin/bat -P"
 alias catn="/usr/bin/cat"
 alias catp="cat --plain"
@@ -193,7 +197,7 @@ alias xclp="xclip -sel clip"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
 alias pkc="sudo pkcon refresh && sudo pkcon update -y"
-alias pls="sudo apt update && apt list --upgradable"
+alias pls="sudo pkcon refresh && apt list --upgradable"
 
 alias tree1="tree -L 1"
 alias tree2="tree -L 2"
@@ -204,6 +208,7 @@ alias postmankey="echo \"PMAK-638ff9c8507aff44a0e44d78-3b4264c978cdb7c210ee38225
 
 # Dev Snippets
 alias dev="npm run dev"
+alias devdocker="docker compose up --build"
 alias test="npm test"
 alias lint="npm run lint"
 alias lintfix="npm run lint:fix"
