@@ -117,6 +117,18 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 curl https://pyenv.run | bash
 ```
 
+## Neovim Upgrade
+
+```sh
+cd ~/Downloads
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo rm /usr/bin/nvim
+sudo mv nvim.appimage /usr/bin/nvim
+
+```
+
+
 ## NvChad
 
 ```sh
