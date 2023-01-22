@@ -41,6 +41,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt install gh -y
 ```
 
+### issue with trusted.gpg
+
+```sh
+ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/
+```
+
 ## ZSH
 
 ### Oh My Zsh
