@@ -202,3 +202,29 @@ sudo usermod -aG docker $USER
 newgrp docker
 docker run hello-world
 ```
+
+## Postman install 
+```sh
+
+cd ~/Downloads
+tar -xvf postman-linux-x64.tar.gz
+sudo mv Postman /opt/Postman
+sudo ln -s /opt/Postman/Postman /usr/bin/postman
+```
+
+```sh
+cat > ~/.local/share/applications/postman.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=postman
+# Before v6.1.2
+# Icon=/opt/Postman/resources/app/assets/icon.png
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+EOL
+
+```
+
