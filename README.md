@@ -7,7 +7,7 @@ sudo pkcon refresh && sudo pkcon update -y
 ```
 
 ```sh
-sudo apt install kubuntu-restricted-extras build-essential kio-extras git gnome-keyring seahorse curl unzip neovim wget zsh stow python3-pip synaptic -y
+sudo apt install kubuntu-restricted-extras build-essential kio-extras htop net-tools tree git gnome-keyring seahorse curl unzip neovim wget zsh stow python3-pip synaptic -y
 ```
 
 ```sh
