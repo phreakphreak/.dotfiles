@@ -213,6 +213,10 @@ alias test="npm test"
 alias lint="npm run lint"
 alias lintfix="npm run lint:fix"
 
+# Directory alias
+alias back="dirhistory_back"
+alias forward="dirhistory_forward"
+
 # ----------------------
 # Git Aliases
 # ----------------------
