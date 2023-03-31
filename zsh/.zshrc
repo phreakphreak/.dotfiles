@@ -17,10 +17,10 @@ export SUDO_PROMPT="passwd: "
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Pyenv and virtualenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
-# eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 
 
 
