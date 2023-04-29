@@ -115,6 +115,14 @@ chmod +x strap.sh
 sudo ./strap.sh 
 
 pacman -S xorg xorg-server kitty
+pacman -S --needed xorg sddm
+pacman -S --needed plasma kde-applications plasma-wayland-session
+
+# pipewire-media-session
+# phonon-qt5-gstreamer
+# pyside2
+# cronie
+# tesseract-data-eng (for english)
 
 
 paru -Sy picom-git wezterm rofi acpi acpid acpi_call upower lxappearance-gtk3 \
