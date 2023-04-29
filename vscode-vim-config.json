@@ -2,7 +2,7 @@
   
   "vim.leader": " ",
   "vim.surround": true,
-  "vim.sneak": false,
+  "vim.sneak": true,
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
