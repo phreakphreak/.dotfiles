@@ -132,6 +132,7 @@ setopt share_history
 
 # Plugins
 plugins=(
+  poetry
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -214,56 +215,14 @@ alias lint="npm run lint"
 alias lintfix="npm run lint:fix"
 
 # Directory alias
-alias back="dirhistory_back"
-alias forward="dirhistory_forward"
+alias dback="dirhistory_back"
+alias dforward="dirhistory_forward"
 
 # ----------------------
 # Git Aliases
 # ----------------------
-alias ga='git add'
-alias gaa='git add .'
-alias gaaa='git add --all'
-alias gau='git add --update'
-
-alias gb='git branch'
-alias gbd='git branch --delete '
-
-alias gc='git commit'
-alias gcm='git commit --message'
-alias gcf='git commit --fixup'
-
-alias gco='git checkout'
-alias gcob='git checkout -b'
-
-alias gd='git diff'
-alias gda='git diff HEAD'
-
-alias gi='git init'
 alias glg='git log --graph --oneline --decorate --all'
-alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
-
-alias gm='git merge --no-ff'
-alias gma='git merge --abort'
-alias gmc='git merge --continue'
-alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gr='git rebase'
-alias gs='git status'
-alias gss='git status --short'
-alias gst='git stash'
-alias gsta='git stash apply'
-alias gstd='git stash drop'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-alias gsts='git stash save'
-
 alias grlc="git reset --soft HEAD~1"
-alias ghrc="gh repo clone"
-# ----------------------
-# Git Functions
-# ----------------------
-# Git log find by commit message
-function glf() { git log --all --grep="$1"; }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -327,3 +286,13 @@ ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 
 # END FILE 
 
+
+# pnpm
+export PNPM_HOME="/home/phreakphreak/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="/home/phreakphreak/.local/bin:$PATH"
