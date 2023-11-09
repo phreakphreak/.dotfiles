@@ -133,6 +133,7 @@ setopt share_history
 # Plugins
 plugins=(
   poetry
+  jira
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -170,8 +171,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
-# Custom Alias
+# Custom Aliases
+alias enviospetbo=" local-ssl-proxy --key ./enviospet.com.bo-key.pem --cert enviospet.com.bo.pem --source 443 --target 8000"
+alias gtag="git tag --sort=-v:refname --list | grep -v 'rc' | head -n 5"
+alias bc="better-commits"
 alias authaws="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 711128949512.dkr.ecr.us-east-1.amazonaws.com"
 
 alias tag-enviospet="docker tag enviospet/enviospet-frontend:latest 711128949512.dkr.ecr.us-east-1.amazonaws.com/enviospet/enviospet-frontend:"
@@ -193,7 +196,7 @@ alias tcfg="vim ~/.tmux.conf.local"
 alias pcfg="vim ~/.p10k.zsh"
 alias kcfg="vim ~/.config/kitty/kitty.conf"
 alias ip='ip --color=auto'
-alias kicat="kitty +kitten icat"
+alias kicat="kitten icat"
 alias xclp="xclip -sel clip"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
