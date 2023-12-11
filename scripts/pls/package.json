@@ -1,0 +1,16 @@
+{
+  "name": "pls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "pkg package.json -t latest-linux-x64,latest-win-x64,latest-macos-x64 -o pls"
+  },
+  "bin": {
+    "pls": "app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
