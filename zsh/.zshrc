@@ -1,6 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# ZSH Config
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -150,6 +149,10 @@ plugins=(
   colored-man-pages
   docker
   vscode
+  gh
+  git-auto-fetch
+  gitignore
+  fnm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -201,7 +204,7 @@ alias xclp="xclip -sel clip"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
 alias pkc="sudo pkcon refresh && sudo pkcon update -y"
-alias pls="pls-linux"
+alias pls="pls"
 
 alias tree1="tree -L 1"
 alias tree2="tree -L 2"
