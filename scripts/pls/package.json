@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "build:all": "pkg package.json -t latest-linux-x64,latest-win-x64,latest-macos-x64 -o pls",
-    "build": "pkg package.json -t latest-linux-x64 -o pls"
+    "build": "pkg package.json -t latest-linux-x64 -o ./build/pls"
   },
   "bin": {
     "pls": "app.js"

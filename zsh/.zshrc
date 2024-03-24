@@ -204,7 +204,6 @@ alias xclp="xclip -sel clip"
 alias clram='sync; echo 4 > /proc/sys/vm/drop_caches'
 alias portlists="sudo lsof -i -P -n | grep LISTEN"
 alias pkc="sudo pkcon refresh && sudo pkcon update -y"
-alias pls="pls"
 
 alias tree1="tree -L 1"
 alias tree2="tree -L 2"
