@@ -39,23 +39,37 @@ if [ ! -d "$directorio" ]; then
     exit 1
 fi
 
-# Listar todos los archivos en el directorio y subdirectorios
-archivos=$(find "$directorio" -type f)
+# Lista de directorios y archivos a ignorar
+archivos_a_ignorar=("_app.tsx" "404.tsx" "_error.tsx", "_document.tsx")
+
+# Función para verificar si se debe ignorar un directorio o archivo
+deberia_ignorar() {
+    local item="$1"
+    local lista=("$@")
+
+    for i in "${lista[@]}"; do
+        if [[ "$i" == "$item" ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Listar todos los archivos en el directorio y subdirectorios, evitando los especificados
+archivos=$(find "$directorio" -type f -print | grep -v '/api/' | grep -v -e "$(printf "%s\n" "${archivos_a_ignorar[@]}")")
+archivos_con_texto=$(grep -rl "getServerSideProps" "$directorio" | grep -v -e "$(printf "%s\n" "${archivos_a_ignorar[@]}")" || true)
 
 # Imprimir todos los archivos encontrados
-# echo "Listado de todos los archivos en el directorio $directorio:"
+# echo "Listado de todos los archivos en el directorio $directorio (excepto los ignorados):"
 # echo "$archivos"
-
-# Realizar la búsqueda en los archivos
-archivos_con_texto=$(grep -rl "getServerSideProps" "$directorio" || true)
-
-# Imprimir archivos que contienen la cadena
-# echo "Archivos que contienen 'getServerSideProps':"
+#
+# # Imprimir archivos que contienen la cadena
+# echo "Archivos que contienen 'getServerSideProps' (excepto los ignorados):"
 # echo "$archivos_con_texto"
 
 # Comparar listas de archivos para encontrar los que no tienen la cadena
 archivos_sin_texto=$(comm -23 <(echo "$archivos" | sort) <(echo "$archivos_con_texto" | sort))
 
 # Imprimir archivos que no tienen la cadena
-echo "Archivos que no contienen 'getServerSideProps':"
+echo "Archivos que no contienen 'getServerSideProps' (excepto los ignorados):"
 echo "$archivos_sin_texto"
